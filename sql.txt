@@ -1,10 +1,28 @@
 SELECT with JOIN practice:
 
-Join the OrderDetails and Products tables, to show a report where the columns are OrderID, ProductName, and Quantity.
+Join the OrderDetails and Products tables, to show a report where the columns are 
+OrderID, ProductName, and Quantity
 Paste the SQL statement you used below.
 
 
-Join the Orders, OrderDetails, and Employees tables to return a report with with the EmployeeName, ProductID, and Quantity.
+Well here I decided to do an inner join that will show just what match in both, but
+We could do also a left outer join that will show the intersection and all of the rows from the left table
+Or we could do a right outer join which will show the intersection and the right rows from the right table. This exercise was not very specific what kind of join should we show you
+
+SELECT od.OrderID, p.ProductName, od.Quantity 
+FROM OrderDetails as od INNER JOIN Products as p
+ON od.ProductID = p.ProductID
+
+
+Join the Orders, OrderDetails, and Employees tables 
+to return a report with the EmployeeName, ProductID, and Quantity.
 Paste the SQL statement you used below.
+
+SELECT  e.EmployeeName, o.ProductID, od.Quantity
+FROM ((Orders as o
+INNER JOIN  OrderDetails as od o.OrderID = od.OrderID)
+INNER JOIN  Employees as e o. EmployeeID =   e.EmployeeID);
+
+        
 
 
